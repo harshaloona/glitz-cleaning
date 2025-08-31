@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Glitz Cleaning Services | Professional Commercial & Residential Cleaning Australia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional cleaning services across Australia. Specializing in commercial office cleaning, residential cleaning, and specialized cleaning solutions. Fully insured with experienced team.">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Brand Colors & Fonts */
+        :root {
+            --navy: #1B2E53;
+            --gold: #E8C64F;
+            --white: #ffffff;
+            --gray: #f5f5f5;
+            --light-gray: #e0e0e0;
+            --btn-hover: #d4be34;
+            --font-primary: 'Josefin Sans', sans-serif;
+            --font-secondary: 'Lato', sans-serif;
+        }
+
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-secondary);
+            color: var(--navy);
+            background: var(--white);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-primary);
+            margin: 0.5em 0;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1.5em;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--navy);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .nav-logo {
+            color: var(--gold);
+            font-family: var(--font-primary);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover {
+            color: var(--gold);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 140px 20px 80px 20px;
+            background: var(--gray);
+            position: relative;
+        }
+
+        .logo-container {
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .logo-container img {
+            max-width: 200px;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 0 8px rgba(232,198,79,0.8));
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+
+        .gold-text {
+            color: var(--gold);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 15px 35px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: var(--btn-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 20px;
+            background: var(--white);
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background: var(--gray);
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(27, 46, 83, 0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--navy);
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .service-features li {
+            padding: 5px 0;
+            color: #555;
+        }
+
+        .service-features li::before {
+            content: "✓ ";
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        /* About Section */
+        .about {
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--gray);
+            padding: 80px 20px;
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .contact h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            grid-column: 1 / -1;
+        }
+
+        .contact-info {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-info h3 {
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .contact-item span {
+            margin-right: 10px;
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        .contact form {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact input, .contact textarea {
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid var(--light-gray);
+            font-family: var(--font-secondary);
+            width: 100%;
+            transition: border-color 0.3s;
+        }
+
+        .contact input:focus, .contact textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .contact label {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--navy);
+        }
+
+        .contact button {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 15px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .contact button:hover {
+            background: var(--btn-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--navy);
+            color: var(--gold);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--navy);
+                padding: 20px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero {
+                padding: 120px 20px 60px 20px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .service-card {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0 15px;
+            }
+
+            .hero {
+                padding: 100px 15px 50px 15px;
+            }
+
+            .services {
+                padding: 60px 15px;
+            }
+
+            .contact {
+                padding: 60px 15px;
+            }
+
+            .contact form, .contact-info {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">Glitz Cleaning</div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <div class="mobile-menu-toggle" id="mobileToggle">☰</div>
+        </div>
+    </nav>
+
+    <!-- Header / Hero Section -->
+    <header class="hero">
+        <div class="logo-container">
+            <img src="your-logo.png" alt="Glitz Cleaning Services Logo">
+        </div>
+       
+        <h1><span class="gold-text">Sparkling</span> clean homes & businesses</h1>
+        <p>Your trusted local cleaning specialists, delivering spotless results every time with professional service across Australia.</p>
+        <a href="#contact" class="btn">Get a Free Quote</a>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Our <span class="gold-text">Professional</span> Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>Commercial Cleaning</h3>
+                <p>Professional office and commercial facility cleaning tailored to your business needs. We maintain the highest standards of cleanliness to create productive, healthy work environments.</p>
+                <ul class="service-features">
+                    <li>Daily, weekly or monthly office cleaning</li>
+                    <li>Medical facilities and clinics</li>
+                    <li>Retail spaces and showrooms</li>
+                    <li>Educational institutions</li>
+                    <li>Gyms and fitness centers</li>
+                    <li>Restaurants and hospitality venues</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🏠</div>
+                <h3>Residential Cleaning</h3>
+                <p>Comprehensive home cleaning services designed to give you more time to enjoy life. Our experienced team treats your home with the care and respect it deserves.</p>
+                <ul class="service-features">
+                    <li>Regular weekly, fortnightly cleaning</li>
+                    <li>One-off deep cleaning</li>
+                    <li>End of lease cleaning</li>
+                    <li>Spring cleaning services</li>
+                    <li>Move-in/move-out cleaning</li>
+                    <li>Holiday home maintenance</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h3>Specialized Services</h3>
+                <p>Expert cleaning solutions for unique requirements. From carpet deep cleaning to window washing, we handle the specialized tasks that make all the difference.</p>
+                <ul class="service-features">
+                    <li>Carpet and upholstery cleaning</li>
+                    <li>Window and glass cleaning</li>
+                    <li>Post-construction cleanup</li>
+                    <li>Event cleaning services</li>
+                    <li>Industrial cleaning solutions</li>
+
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About <span class="gold-text">Glitz Cleaning Services</span></h2>
+        
+        <p>Glitz Cleaning Services is a premier Australian cleaning company specializing in comprehensive commercial and residential cleaning solutions. With years of experience in the industry, we have built our reputation on delivering exceptional service quality and maintaining the highest professional standards across all our operations.</p>
+
+        <p>Our commercial cleaning division serves a diverse range of business clients, from small offices to large corporate facilities, medical centers, educational institutions, and hospitality venues. We understand that a clean workplace is essential for productivity, employee wellbeing, and creating positive impressions with clients and visitors. Our experienced team works around your business schedule to minimize disruption while ensuring your facility maintains the highest standards of cleanliness and hygiene.</p>
+
+        <p>As a fully insured Australian company, we prioritize safety, reliability, and trust in every aspect of our service delivery. Our professionally trained, background-checked cleaning specialists use advanced eco-friendly products and state-of-the-art equipment to achieve superior results while protecting the environment and the health of building occupants.</p>
+
+        <p>What sets Glitz Cleaning Services apart is our commitment to customized cleaning solutions. We don't believe in one-size-fits-all approaches. Instead, we work closely with each client to develop tailored cleaning programs that address their specific needs, schedule requirements, and budget considerations. Our operational excellence model ensures consistent quality delivery while mitigating risks and maintaining the highest service standards.</p>
+
+        <p>Our comprehensive service offering extends beyond basic cleaning to include specialized solutions such as carpet cleaning, window washing, post-construction cleanup, and emergency cleaning services. Whether you need daily office maintenance, deep facility sanitization, or one-off project cleaning, our skilled team delivers reliable, professional results that exceed expectations.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <h2>Contact <span class="gold-text">Us</span></h2>
+            
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <div class="contact-item">
+                    <span>📞</span>
+                    <div>
+                        <strong>Phone:</strong><br>
+                        <a href="tel:+61433902856" style="color: var(--navy);">+61 433 902 856</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span>📧</span>
+                    <div>
+                        <strong>Email:</strong><br>
+                        Glitzcleanings1@gmail.com
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span>🏢</span>
+                    <div>
+                        <strong>Service Areas:</strong><br>
+                        Australia-wide commercial & residential
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span>⏰</span>
+                    <div>
+                        <strong>Business Hours:</strong><br>
+                        Monday - Friday: 7:00 AM - 6:00 PM<br>
+                        Saturday: 8:00 AM - 4:00 PM
+                    </div>
+                </div>
+            </div>
+
+            <form action="https://formspree.io/f/xdklapvl" method="POST">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Your Phone Number">
+                
+                <label for="service">Service Type</label>
+                <select id="service" name="service" required>
+                    <option value="">Select a service</option>
+                    <option value="commercial">Commercial Cleaning</option>
+                    <option value="residential">Residential Cleaning</option>
+                    <option value="specialized">Specialized Services</option>
+                    <option value="quote">Free Quote Request</option>
+                </select>
+                
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Tell us about your cleaning requirements..." required></textarea>
+                
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Glitz Cleaning Services. All rights reserved. | Fully Insured & Licensed</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu after clicking
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Form enhancement
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function(e) {
+            const submitBtn = form.querySelector('button[type="submit"]');
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+        });
+    </script>
+</body>
+</html>
